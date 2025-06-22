@@ -1,5 +1,6 @@
 const cloud = document.getElementById("cloud")
 const  barraLateral = document.querySelector(".barra-lateral")
+const  publicidad = document.querySelector(".publicidad")
 const  spans = document.querySelectorAll("span")
 const  palanca = document.querySelector(".swich")
 const  circulo = document.querySelector(".circulo")
@@ -11,6 +12,7 @@ circulo.classList.toggle('prendido')
 
 cloud.addEventListener("click",()=>{
 barraLateral.classList.toggle("mini-barra-lateral")
+publicidad.classList.toggle("div-oculto")
 spans.forEach((span)=>{
     span.classList.toggle("oculto")
 })
