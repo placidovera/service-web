@@ -413,7 +413,11 @@ li:hover {
   display: block; /* O flex/grid, según lo que sea */
   grid-area: var;
   width: 250px;
+<<<<<<< HEAD
   transform: translateX(-240px);
+=======
+  transform: translateX(-280px);
+>>>>>>> parent of 319e27f (vsita movil1)
   opacity: 1;
   transition: transform 1s ease-out, opacity 1s ease-out;
   background-image: url(./imagen/autog.png);
