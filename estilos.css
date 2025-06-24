@@ -341,8 +341,7 @@ button:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
-  background-size: contain; 
-  
+  background-size: 100% 100%;
 
 }
 .green:hover{
@@ -357,7 +356,7 @@ button:hover {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: 100% 100%;
 }
 .red:hover{
   transform: translateY(-5px);
@@ -413,11 +412,7 @@ li:hover {
   display: block; /* O flex/grid, según lo que sea */
   grid-area: var;
   width: 250px;
-<<<<<<< HEAD
   transform: translateX(-240px);
-=======
-  transform: translateX(-280px);
->>>>>>> parent of 319e27f (vsita movil1)
   opacity: 1;
   transition: transform 1s ease-out, opacity 1s ease-out;
   background-image: url(./imagen/autog.png);
@@ -426,6 +421,12 @@ li:hover {
 .contenedor-principal {
       grid-template-rows: 10px 3000px 2000px;
       grid-template-columns: 1% 0% 95% 0%;
+}
+.barra-lateral{
+    width: auto; /* o directamente eliminar este bloque */
+}
+.div-oculto {
+  display: none;
 }
 .titulo{
   display: flex;
@@ -460,7 +461,8 @@ min-width: 100px;
   width: 300%;
 }
 .publicidad{
-  transform: translateX(35%); /* Vuelve a su posición original */
+  transform: translateX(35%); /* 
+Usuario@DESKTOP-UQMGGBM MINGW64 ~/OneDrive/Desktop/barra (main) */
   opacity: 0;
 }
 .div-oculto{
@@ -470,5 +472,4 @@ min-width: 100px;
 .barra-lateral{
     width: 80px;
 }
-
 }
