@@ -492,7 +492,7 @@ li{  list-style-type: none;
 }
 @media(max-width :480px){
 .contenedor-principal {
-      grid-template-rows: 10px 3000px 2000px;
+      grid-template-rows: 200px 4000px 2500px;
       grid-template-columns: 1% 0% 95% 0%;
 }
 .barra-lateral{
@@ -518,11 +518,11 @@ min-width: 100px;
 }
 .contenido .fotos{
   flex-direction: column;
-          max-width: 350px;
-          height: 20%;
+         width: auto;
+          height: 22%;
 }
 .green{
-      width: 300px;
+      width: 100px;
     height: 200px;
 }
 .red{
@@ -544,6 +544,9 @@ Usuario@DESKTOP-UQMGGBM MINGW64 ~/OneDrive/Desktop/barra (main) */
 } /*barra lateral */
 .barra-lateral{
     width: 80px;
+}
+.encabezado{
+      width: 500px;
 }
 
 }
