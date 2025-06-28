@@ -1,11 +1,12 @@
 :root{
---color-barra-lateral: rgb(245, 240, 255);           /* lavanda claro */
---color-textos: rgb(64, 38, 80);                     /* berenjena profundo */
---color-textos-menu: rgb(127, 90, 155);              /* violeta medio */
---color-boton: rgb(240, 122, 126);                   /* coral rosado */
---color-texto-boton: rgb(255, 255, 255);             /* blanco puro */
---color-menu-hover: rgb(224, 200, 248);              /* lavanda suave */
---color-menu-hover-textos: rgb(70, 35, 105);         /* violeta oscuro */         
+--color-barra-lateral: rgb(238, 250, 245);           /* Verde ártico suave – claro, refrescante, no lavanda */
+--color-textos: rgb(40, 52, 48);                     /* Gris verdoso profundo para contraste moderno */
+--color-textos-menu: rgb(100, 140, 130);             /* Verde musgo ahumado – sobrio y elegante */
+--color-boton: rgb(250, 160, 110);                   /* Durazno solar – cálido y vibrante */
+--color-texto-boton: rgb(255, 255, 255);             /* Blanco absoluto para legibilidad */
+--color-menu-hover: rgb(210, 240, 230);              /* Verde espuma – muy liviano pero con identidad */
+--color-menu-hover-textos: rgb(60, 95, 85);          /* Verde pino grisáceo, interesante y legible */
+       
 --color-linea: rgb(205, 236, 214);                  
 --color-swich-base: rgb(201,202,206);
 --color-swich-circulo: rgb(241,241,241);
@@ -42,7 +43,12 @@
 body{
     width: 100%;
     height: 100vh;
-} /*barra lateral */
+   
+}
+.color-body{
+ background-color: black;
+}
+/*barra lateral */
 .barra-lateral{
     display: flex;
     flex-direction: column;
@@ -228,7 +234,7 @@ position: relative;
 .titulo{
     margin-top: 20px;
     display: flex;
-    background-color:white;
+    background-color:transparent;
     justify-content: space-between;
     text-align: center;
 
@@ -298,7 +304,7 @@ button:hover {
 .encabezado {
   display: flex;
   padding: 20px;
-  background-color: #fff;
+  background-color:transparent;
   text-align: center; 
   margin-bottom: 20px;
   width: 100%;
@@ -314,9 +320,26 @@ button:hover {
    "bar var buscador buscador" 
    "bar var buscador buscador" ;
 
-  grid-template-columns:  21% 0% 80% 0%;
-  grid-template-rows: 100px 700px 1200px;
+  grid-template-columns:  20% 0% 80% 0%;
+  grid-template-rows: 100px 100px 2000px;
   justify-content: center;
+ /* background-image: url(./imagen/image\ \(1\).png);*/
+ 
+}
+.tit{
+ font-family: 'Rajdhani', sans-serif; /* Moderna y técnica */
+font-size: 64px;
+text-transform: uppercase;
+color: #00acc1; /* Cian oscuro */
+text-shadow:
+  1px 1px 0 #ffffff,      /* Delicado bisel claro */
+  2px 2px 0 #607d8b,      /* Gris azulado técnico */
+  4px 4px 0 #00bcd4,      /* Cian digital */
+  6px 6px 6px #263238;   /* Sombra profunda */
+letter-spacing: 3px;
+font-weight: 800;
+
+
 }
 
 .encabezado {
@@ -334,53 +357,75 @@ button:hover {
   grid-area: var;
 }
 .green{
-  border-radius: 30px;
-  background-image: url(./imagen/plomero.jpg);
-  width: 850px;
-  height: 250px;
+  width:50px;
+  height: 50px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-
+  background-color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-textos);
+  border-radius: 60%;
+  padding: 1%;
 }
 .green:hover{
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
+p{
+  font-size: 10px;
+}
+h2{
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  padding: 3%;
+}
 .red{
-   border-radius: 30px;
-   background-image: url(./imagen/tarjeta\ final\ frente\ \(1\).jpg);
-   width: 850px;
-   height: 250px;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+width:650px;
+height: 220px;
+ display: flex;
+ flex-direction: column;
+ justify-content: left;
+ align-items: flex-start;
+ font-size: 30px;
+ color: var(--color-textos);
+ padding:3% 3% 4% 1%;
+ gap: 5%;
+ border-radius: 25px;
+ border: 2px solid #3498db;
+
 }
 .red:hover{
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 .fotos{
-    margin: 2%;
     display: flex;
-    gap: 3%;
+    gap: 2%;
     width: 100%;
     height: 100%;
-    
+    margin-top: 0%;
+    color: var(--color-textos);
+   
 }
 .servicios{
-flex-grow: 1;
   width: 100%;
-  padding: 80px;
+  padding: 20px;
   margin-left: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: calc(100% + 13.5%);
   margin-left: -7.3%;
- 
+  flex-grow:1;
+
+}
+.service{
+  width: 80%;
+  height: 80%;
 }
 #campoBusqueda:focus {
   border: 2px solid #3498db;
@@ -416,6 +461,34 @@ li:hover {
   opacity: 1;
   transition: transform 1s ease-out, opacity 1s ease-out;
   background-image: url(./imagen/autog.png);
+}
+/*Pie de Pagina en todas las paginas*/
+.pantalla{  background: linear-gradient(to right, rgba(0, 0, 0, 0.6666666667), transparent, rgba(0, 0, 0, 0.6666666667));
+    background-color:blueviolet;
+    display: flex;
+    align-items: center;
+    height: 300px;  
+    ul{
+     font-size: 1rem;
+     margin-right: 10px;
+     height: 100%;
+     list-style-type: none;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     padding-top: 5%;
+     margin: 2%;
+  
+    }
+}
+li{  list-style-type: none;
+   a{
+        color: white;
+     }
+}
+.vacio{
+    width: 100%;
+    height: 100%;
 }
 @media(max-width :480px){
 .contenedor-principal {
@@ -472,4 +545,5 @@ Usuario@DESKTOP-UQMGGBM MINGW64 ~/OneDrive/Desktop/barra (main) */
 .barra-lateral{
     width: 80px;
 }
+
 }
