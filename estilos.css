@@ -1,15 +1,16 @@
-:root{
---color-barra-lateral: rgb(238, 250, 245);           /* Verde ártico suave – claro, refrescante, no lavanda */
---color-textos: rgb(40, 52, 48);                     /* Gris verdoso profundo para contraste moderno */
---color-textos-menu: rgb(100, 140, 130);             /* Verde musgo ahumado – sobrio y elegante */
---color-boton: rgb(250, 160, 110);                   /* Durazno solar – cálido y vibrante */
---color-texto-boton: rgb(255, 255, 255);             /* Blanco absoluto para legibilidad */
---color-menu-hover: rgb(210, 240, 230);              /* Verde espuma – muy liviano pero con identidad */
---color-menu-hover-textos: rgb(60, 95, 85);          /* Verde pino grisáceo, interesante y legible */
-       
---color-linea: rgb(205, 236, 214);                  
---color-swich-base: rgb(201,202,206);
---color-swich-circulo: rgb(241,241,241);
+
+:root {
+  --color-barra-lateral: #f5f7fa;               /* Claro, minimalista */
+  --color-textos: #1e1e2f;                      /* Oscuro moderno */
+  --color-textos-menu: #5c6bc0;                 /* Índigo moderno */
+  --color-boton: #4dd0e1;                       /* Cian pastel vibrante */
+  --color-texto-boton: #ffffff;                 /* Blanco */
+  --color-menu-hover: #e0f7fa;                  /* Hover claro y fresco */
+  --color-menu-hover-textos: #00796b;           /* Verde azulado elegante */
+  --color-body: rgb(255,255,255);     
+ --color-linea: rgb(205, 236, 214);                  
+ --color-swich-base: rgb(201,202,206);
+ --color-swich-circulo: rgb(241,241,241);
 }
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 *{
@@ -39,17 +40,19 @@
 --color-linea: rgb(71,70,78);
 --color-swich-base: rgb(39,205,64);
 --color-swich-circulo: rgb(255,255,255);
+--color-body: rgb(63, 61, 61);
 }
 body{
     width: 100%;
     height: 100vh;
-   
+   background-color:var(--color-body);
+     transition: width 0.5s ease ,background-color 3s ease ;
 }
 .color-body{
  background-color: black;
 }
 /*barra lateral */
-.barra-lateral{
+.barra-lateral {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,10 +63,20 @@ body{
     transition: width 0.5s ease ,background-color 3s ease ;
     overflow: hidden;
 }
-.barra-lateral .navegacion{
+.barra-lateral .navegacion {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+}
+.barra-lateral .navegacion::-webkit-scrollbar {
+  width: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb {
+  background-color: black;
+ border-radius: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover {
+  background-color: red;
 }
 .barra-lateral span{
 font-size: 18px;
@@ -102,22 +115,31 @@ margin-left: 5px;
 .barra-lateral .nombre-pagina span.oculto{
     opacity: 0;
 }
-.barra-lateral .boton{
-    width: 100%;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--color-boton);
-    color: var(--color-texto-boton);
-    margin-bottom: 20px;
+.barra-lateral .boton {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-boton);
+  color: var(--color-texto-boton);
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease
 }
 .barra-lateral .boton ion-icon{
 min-width: 50px;
 font-size: 25px;
-
+}
+.barra-lateral .boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+  background-color: #38c4d6; 
 }
 .barra-lateral .navegacion li{
     list-style: none;
@@ -234,19 +256,17 @@ position: relative;
 .titulo{
     margin-top: 20px;
     display: flex;
-    background-color:transparent;
     justify-content: space-between;
     text-align: center;
 
 }.titulo {
-  /* igual al ancho de .barra-lateral */
     padding: 20px;
     display: flex;  
 }  /* contenedor de la pagina */
 .contenedor-principal {
   display: flex;
   width: 100%;
-    align-content: start;
+  align-content: start;
 }
 .contenido {
   flex-grow: 3;
@@ -257,8 +277,8 @@ position: relative;
   justify-content: center;
   overflow: hidden;
   height: auto; 
-}.contenido .buscador input {
-
+}
+.contenido .buscador input {
   height: 45px;
   display: flex;
   justify-content: center;
@@ -282,29 +302,36 @@ position: relative;
   gap: 10px;
   max-width: 300px;
 }
-
 .buscador button {
   width: 100%;
-  background-color: var(--color-boton);
-  font-size: 16px;
-  cursor: pointer;
   min-width: 200px;
   height: 45px;
+  background-color: var(--color-boton);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-texto-boton);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  border-radius: 10px;
-  color: var(--color-texto-boton);
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease,box-shadow 0.3s ease,background-color 0.3s ease;
 }
-button:hover {
-  transform: translateX(6px);
+.buscador button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+  background-color: #38c4d6; 
+}
+
+.buscador button:active {
+  transform: translat
 }
 .encabezado {
   display: flex;
   padding: 20px;
-  background-color:transparent;
   text-align: center; 
   margin-bottom: 20px;
   width: 100%;
@@ -323,19 +350,18 @@ button:hover {
   grid-template-columns:  20% 0% 80% 0%;
   grid-template-rows: 100px 100px 2000px;
   justify-content: center;
- /* background-image: url(./imagen/image\ \(1\).png);*/
  
 }
 .tit{
- font-family: 'Rajdhani', sans-serif; /* Moderna y técnica */
+ font-family: 'Rajdhani', sans-serif; 
 font-size: 64px;
 text-transform: uppercase;
-color: #00acc1; /* Cian oscuro */
+color: #00acc1; 
 text-shadow:
-  1px 1px 0 #ffffff,      /* Delicado bisel claro */
-  2px 2px 0 #607d8b,      /* Gris azulado técnico */
-  4px 4px 0 #00bcd4,      /* Cian digital */
-  6px 6px 6px #263238;   /* Sombra profunda */
+  1px 1px 0 #ffffff,      
+  2px 2px 0 #607d8b,      
+  4px 4px 0 #00bcd4,     
+  6px 6px 6px #263238; 
 letter-spacing: 3px;
 font-weight: 800;
 
@@ -356,7 +382,7 @@ font-weight: 800;
 .publicidad {
   grid-area: var;
 }
-.green{
+/* .green{
   width:50px;
   height: 50px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -373,7 +399,7 @@ font-weight: 800;
 .green:hover{
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 p{
   font-size: 10px;
 }
@@ -383,7 +409,7 @@ h2{
   text-align: center;
   padding: 3%;
 }
-.red{
+/* .red{
 width:650px;
 height: 220px;
  display: flex;
@@ -401,7 +427,53 @@ height: 220px;
 .red:hover{
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+} */
+ .red {
+  width: 650px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 30px;
+  color: white;
+  padding: 3% 3% 4% 1%;
+  gap: 5%;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #4dd0e1
+, #344054
+);
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.red:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.green {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f1c40f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  padding: 1%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.green:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
 .fotos{
     display: flex;
     gap: 2%;
@@ -492,8 +564,8 @@ li{  list-style-type: none;
 }
 @media(max-width :480px){
 .contenedor-principal {
-      grid-template-rows: 200px 4000px 2500px;
-      grid-template-columns: 1% 0% 95% 0%;
+      grid-template-rows: 150px 3000px 2500px;
+      grid-template-columns: 20% 0% 80% 0%;
 }
 .barra-lateral{
     width: auto; /* o directamente eliminar este bloque */
@@ -508,6 +580,8 @@ li{  list-style-type: none;
 .buscador {
   display: flex;
  flex-direction: column;
+ gap: 30px;
+ max-width: 900px;
 }.contenido .buscador input {
 min-width: 100px;
    
@@ -522,16 +596,18 @@ min-width: 100px;
           height: 22%;
 }
 .green{
-      width: 100px;
+    width: 100px;
     height: 200px;
 }
 .red{
-      width: 300px;
+    width: 400px;
     height: 200px;
 }
 .servicios{
   padding:0px;
-  width: 300%;
+  width: 100%;
+  margin-top: -200px;
+  margin-left: -50px;
 }
 .publicidad{
   transform: translateX(35%); /* 
@@ -548,5 +624,10 @@ Usuario@DESKTOP-UQMGGBM MINGW64 ~/OneDrive/Desktop/barra (main) */
 .encabezado{
       width: 500px;
 }
-
+.listaResultados{
+  display: none;
+}
+h2{
+  display: none;
+}
 }
