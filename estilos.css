@@ -1,12 +1,12 @@
 
 :root {
-  --color-barra-lateral: #f5f7fa;               /* Claro, minimalista */
-  --color-textos: #1e1e2f;                      /* Oscuro moderno */
-  --color-textos-menu: #5c6bc0;                 /* Índigo moderno */
-  --color-boton: #4dd0e1;                       /* Cian pastel vibrante */
-  --color-texto-boton: #ffffff;                 /* Blanco */
-  --color-menu-hover: #e0f7fa;                  /* Hover claro y fresco */
-  --color-menu-hover-textos: #00796b;           /* Verde azulado elegante */
+  --color-barra-lateral: #f5f7fa;               
+  --color-textos: #1e1e2f;                      
+  --color-textos-menu: #5c6bc0;               
+  --color-boton: #4dd0e1;                      
+  --color-texto-boton: #ffffff;               
+  --color-menu-hover: #e0f7fa;                  
+  --color-menu-hover-textos: #00796b;          
   --color-body: rgb(255,255,255);     
  --color-linea: rgb(205, 236, 214);                  
  --color-swich-base: rgb(201,202,206);
@@ -28,8 +28,8 @@
   font-style: normal;
 }
 
-/* variables de colores */
-.dark-mode{
+/* variables de colores dark mode */
+.dark-mode {
 --color-barra-lateral:  rgb(44,45,49);
 --color-textos: rgb(255,255,255);
 --color-textos-menu:  rgb(110,110,117);
@@ -43,40 +43,27 @@
 --color-body: rgb(63, 61, 61);
 }
 body{
-    width: 100%;
-    height: 100vh;
-   background-color:var(--color-body);
-     transition: width 0.5s ease ,background-color 3s ease ;
-}
-.color-body{
- background-color: black;
+  width: 100%;
+  height: 100vh;
+  background-color:var(--color-body);
+  transition: width 0.5s ease ,background-color 3s ease ;
 }
 /*barra lateral */
 .barra-lateral {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 250px;
-    height: 100%;
-    padding: 20px 15px;
-    background-color: var(--color-barra-lateral);
-    transition: width 0.5s ease ,background-color 3s ease ;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 100%;
+  padding: 20px 15px;
+  background-color: var(--color-barra-lateral);
+  transition: width 0.5s ease ,background-color 3s ease ;
+  overflow: hidden;
 }
 .barra-lateral .navegacion {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.barra-lateral .navegacion::-webkit-scrollbar {
-  width: 5px;
-}
-.barra-lateral .navegacion::-webkit-scrollbar-thumb {
-  background-color: black;
- border-radius: 5px;
-}
-.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover {
-  background-color: red;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .barra-lateral span{
 font-size: 18px;
@@ -88,8 +75,8 @@ font-size: 15px;
 transition: opacity 0.5s ease  width 0.5s ease;
 }
 .barra-lateral span.oculto{
-    opacity: 0;
-    width: 0;
+  opacity: 0;
+  width: 0;
 }
 .barra-lateral .nombre-pagina{
 width: 100%;
@@ -98,12 +85,11 @@ display: flex;
 align-items: center;
 margin-bottom: 40px;
 color: var(--color-textos);
-
 }
 .barra-lateral .nombre-pagina ion-icon{
-    min-width: 50px;
-    font-size: 40px;
-    cursor: pointer;
+ min-width: 50px;
+ font-size: 40px;
+ cursor: pointer;
 }
 .barra-lateral .nombre-pagina span{
 font-size: 25px;
@@ -142,10 +128,9 @@ font-size: 25px;
   background-color: #38c4d6; 
 }
 .barra-lateral .navegacion li{
-    list-style: none;
-    display: flex;
-    margin-bottom: 5px;
-
+  list-style: none;
+  display: flex;
+  margin-bottom: 5px;
 }
 .barra-lateral .navegacion a:hover{
 color: var(--color-menu-hover-textos);
@@ -178,24 +163,24 @@ justify-content: space-between;
 margin-bottom: 80px;
 }
 .barra-lateral .modo-oscuro .info{
-    width: 150px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    color: var(--color-textos-menu);
-    overflow: hidden;
+  width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  color: var(--color-textos-menu);
+  overflow: hidden;
 }
 .barra-lateral .modo-oscuro ion-icon{
-    width: 50px;
-    font-size: 20px;
+  width: 50px;
+  font-size: 20px;
 }
 .barra-lateral .modo-oscuro .swich{
-    min-width: 50px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  min-width: 50px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .barra-lateral .modo-oscuro .base{
 width: 35px;
@@ -215,7 +200,6 @@ position: relative;
     align-items: center;
     transition: left 0.5s ease;
 }
-
 .barra-lateral .modo-oscuro .circulo.prendido{
     left: 15px;
 }
@@ -235,34 +219,32 @@ position: relative;
     color: var(--color-textos);
     overflow: hidden;
 }
-
 .barra-lateral .usuario .nombre-email{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
 }
-
 .barra-lateral .usuario .nombre{
-    font-size: 15px;
-    font-weight: 600px;
+  font-size: 15px;
+  font-weight: 600px;
 }
 .barra-lateral .usuario .email{
-    font-size: 13px;
+  font-size: 13px;
 }
 .barra-lateral .usuario ion-icon{
     font-size: 20px;
 }
 .titulo{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-
-}.titulo {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.titulo {
     padding: 20px;
     display: flex;  
-}  /* contenedor de la pagina */
+} /* contenedor de la pagina */
 .contenedor-principal {
   display: flex;
   width: 100%;
@@ -354,40 +336,45 @@ position: relative;
 }
 .tit{
  font-family: 'Rajdhani', sans-serif; 
-font-size: 64px;
-text-transform: uppercase;
-color: #00acc1; 
-text-shadow:
+ font-size: 64px;
+ text-transform: uppercase;
+ color: #00acc1; 
+ text-shadow:
   1px 1px 0 #ffffff,      
   2px 2px 0 #607d8b,      
   4px 4px 0 #00bcd4,     
   6px 6px 6px #263238; 
-letter-spacing: 3px;
-font-weight: 800;
+ letter-spacing: 3px;
+ font-weight: 800;
 }
 
 .encabezado {
-  grid-area: titulos1;
+ grid-area: titulos1;
 }
 
 .barra-lateral {
-  grid-area: bar;
-  text-align: center;
+ grid-area: bar;
+ text-align: center;
 }
 .contenido{
-    grid-area: buscador;
+ grid-area: buscador;
 }
 .publicidad {
-  grid-area: var;
+ grid-area: var;
 }
 p{
   font-size: 10px;
 }
 h2{
-  font-size: 50px;
-  font-weight: 500;
   text-align: center;
   padding: 3%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 36px;
+  color: #455a64;
+  text-shadow:0.5px 0.5px 0 #eceff1,1px 1px 2px rgba(0, 172, 193, 0.3);
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
  .red {
   width: 650px;
@@ -401,19 +388,15 @@ h2{
   padding: 3% 3% 4% 1%;
   gap: 5%;
   border-radius: 25px;
-  background: linear-gradient(135deg, #4dd0e1
-, #344054
-);
+  background: linear-gradient(135deg, #4dd0e1,#344054);
   border: none;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .red:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
-
 .green {
   width: 60px;
   height: 60px;
@@ -429,20 +412,17 @@ h2{
   padding: 1%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
 .green:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 }
-
 .fotos{
-    display: flex;
-    gap: 2%;
-    width: 100%;
-    height: 100%;
-    margin-top: 0%;
-    color: var(--color-textos);
-   
+  display: flex;
+  gap: 2%;
+  width: 100%;
+  height: 100%;
+  margin-top: 0%;
+  color: var(--color-textos);
 }
 .servicios{
   width: 100%;
@@ -454,7 +434,6 @@ h2{
   width: calc(100% + 13.5%);
   margin-left: -7.3%;
   flex-grow:1;
-
 }
 .service{
   width: 80%;
@@ -471,15 +450,13 @@ ul {
   list-style: none;
   padding: 0;
 }
-
 li {
   color: var(--color-textos-menu);
   cursor: pointer;
 }
-
 li:hover {
   transform: translateX(6px);
-  color: black;
+  color:var(--color-menu-hover-textos);
 }
 .publicidad{
   transform: translateX(0); /* Vuelve a su posición original */
@@ -495,41 +472,10 @@ li:hover {
   transition: transform 1s ease-out, opacity 1s ease-out;
   background-image: url(./imagen/autog.png);
 }
-/*Pie de Pagina en todas las paginas*/
-.pantalla{  background: linear-gradient(to right, rgba(0, 0, 0, 0.6666666667), transparent, rgba(0, 0, 0, 0.6666666667));
-    background-color:blueviolet;
-    display: flex;
-    align-items: center;
-    height: 300px;  
-    ul{
-     font-size: 1rem;
-     margin-right: 10px;
-     height: 100%;
-     list-style-type: none;
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-     padding-top: 5%;
-     margin: 2%;
-  
-    }
-}
-li{  list-style-type: none;
-   a{
-        color: white;
-     }
-}
-.vacio{
-    width: 100%;
-    height: 100%;
-}
 @media(max-width :480px){
 .contenedor-principal {
-      grid-template-rows: 150px 3000px 2500px;
+      grid-template-rows: 150px 12000px 4500px;
       grid-template-columns: 20% 0% 80% 0%;
-}
-.barra-lateral{
-    width: auto; /* o directamente eliminar este bloque */
 }
 .div-oculto {
   display: none;
@@ -543,18 +489,19 @@ li{  list-style-type: none;
  flex-direction: column;
  gap: 30px;
  max-width: 900px;
-}.contenido .buscador input {
-min-width: 100px;
-   
+}
+.contenido .buscador input {
+min-width: 100px; 
 }
 .contenido{
   font-size: 20px;
    width: 450px;
+
 }
 .contenido .fotos{
   flex-direction: column;
-         width: auto;
-          height: 22%;
+   width: auto;
+  height: 22%;
 }
 .green{
     width: 100px;
@@ -572,21 +519,42 @@ min-width: 100px;
   gap: 3%;
 }
 .publicidad{
-  transform: translateX(35%); /* 
-Usuario@DESKTOP-UQMGGBM MINGW64 ~/OneDrive/Desktop/barra (main) */
+  transform: translateX(35%);
   opacity: 0;
 }
 .div-oculto{
   opacity: 1;
   transition: transform 1s ease-out, opacity 1s ease-out;
-} /*barra lateral */
-.barra-lateral{
-    width: 80px;
 }
 .encabezado{
-      width: 500px;
+ width: 500px;
 }
 h2{
   display: none;
 }
+.barra-lateral .nombre-pagina span{
+    opacity: 0;
+}
+.barra-lateral{
+  width: 150px;
+}
+.mini-barra-lateral {
+  width: 600px;
+  position: relative;
+    height: 550px;
+}
+.barra-lateral span.oculto{
+  opacity: 1;
+  width: 1;
+}
+.barra-lateral .nombre-pagina span.oculto{
+    opacity: 1;
+}
+.barra-lateral span{
+  opacity: 0;
+}
+.barra-lateral .boton {
+  display: none;
+}
+
 }

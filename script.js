@@ -4,19 +4,23 @@ const  publicidad = document.querySelector(".publicidad")
 const  spans = document.querySelectorAll("span")
 const  palanca = document.querySelector(".swich")
 const  circulo = document.querySelector(".circulo")
+//perilla dark mode
 palanca.addEventListener("click",()=>{
 let body = document.body
 body.classList.toggle('dark-mode')
 circulo.classList.toggle('prendido')
 })
-
+// minimiza la barra lateral
 cloud.addEventListener("click",()=>{
 barraLateral.classList.toggle("mini-barra-lateral")
+//espacio debajo de la barra para publicidad
 publicidad.classList.toggle("div-oculto")
 spans.forEach((span)=>{
     span.classList.toggle("oculto")
 })
 })
+
+  // busca en los <li> y filtra el texto segun coincide a .listaResultados
 function buscarEnPagina() {
   const texto = document.getElementById('campoBusqueda').value.toLowerCase();
   const elementos = document.querySelectorAll('#listaResultados p');
@@ -32,6 +36,7 @@ input.addEventListener("input", () => {
   const texto = input.value.toLowerCase();
 
   // Selecciona todos los <li> de todas las listas dentro de .listaResultados
+
   const resultados = document.querySelectorAll(".listaResultados li");
 
   resultados.forEach(li => {
