@@ -474,7 +474,7 @@ li:hover {
 }
 @media(max-width :480px){
 .contenedor-principal {
-      grid-template-rows: 150px 12000px 4500px;
+      grid-template-rows: 150px 5000px 560px;
       grid-template-columns: 20% 0% 80% 0%;
 }
 .div-oculto {
@@ -495,13 +495,12 @@ min-width: 100px;
 }
 .contenido{
   font-size: 20px;
-   width: 450px;
-
+  width: 450px;
 }
 .contenido .fotos{
   flex-direction: column;
    width: auto;
-  height: 22%;
+  height:auto;
 }
 .green{
     width: 100px;
@@ -556,5 +555,7 @@ h2{
 .barra-lateral .boton {
   display: none;
 }
-
+.fotos{
+  gap: 3%;
+}
 }
