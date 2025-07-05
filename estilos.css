@@ -1,25 +1,25 @@
 
 :root {
-  --color-barra-lateral: #f5f7fa;               
-  --color-textos: #1e1e2f;                      
-  --color-textos-menu: #5c6bc0;               
-  --color-boton: #4dd0e1;                      
-  --color-texto-boton: #ffffff;               
-  --color-menu-hover: #e0f7fa;                  
-  --color-menu-hover-textos: #00796b;          
-  --color-body: rgb(255,255,255);     
+ --color-barra-lateral: #f5f7fa;               
+ --color-textos: #1e1e2f;                      
+ --color-textos-menu: #5c6bc0;               
+ --color-boton: #4dd0e1;                      
+ --color-texto-boton: #ffffff;               
+ --color-menu-hover: #e0f7fa;                  
+ --color-menu-hover-textos: #00796b;          
+ --color-body: rgb(255,255,255);     
  --color-linea: rgb(205, 236, 214);                  
  --color-swich-base: rgb(201,202,206);
  --color-swich-circulo: rgb(241,241,241);
 }
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-     font-family: "Contrail One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Contrail One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 } 
 
 .delius-regular {
@@ -48,6 +48,7 @@ body{
   background-color:var(--color-body);
   transition: width 0.5s ease ,background-color 3s ease ;
 }
+
 /*barra lateral */
 .barra-lateral {
   display: flex;
@@ -535,7 +536,7 @@ h2{
     opacity: 0;
 }
 .barra-lateral{
-  width: 150px;
+  width: 100px;
 }
 .mini-barra-lateral {
   width: 600px;
