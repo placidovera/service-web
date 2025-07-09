@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios</title>
+<link rel="stylesheet" href="./css/estilos.css">
+<script src="./js/script.js" defer></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<!-- contendedor de la pagina -->
+<body>
+ <div class="contenedor-principal">
+  <!-- barra lateral -->
+    <div class="barra-lateral">
+<div>
+    <div class="nombre-pagina">
+<ion-icon id="cloud" name="cloud-outline"></ion-icon>
+<span>Servicios Web</span>
+</div>
+<button class="boton">
+    <ion-icon name="add-outline"></ion-icon>
+    <span>Incluye tu servicio</span>
+</button>
+</div>
+<nav class="navegacion">
+<ul>
+<li>
+    <a href="#">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Contactanos</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <ion-icon name="star-outline"></ion-icon>
+        <span>Publicita Aqui</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <ion-icon name="paper-plane-outline"></ion-icon>
+        <span>Aviones</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <ion-icon name="document-text-outline"></ion-icon>
+        <span>Papeles</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+     <ion-icon name="bookmark-outline"></ion-icon>
+        <span>Importante</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <ion-icon name="trash-outline"></ion-icon>
+        <span>Borrar</span>
+    </a>
+</li>
+</ul>
+</nav>
+<div>
+    <div class="linea"></div>
+<div class="modo-oscuro">
+    <div class="info">
+    <ion-icon name="moon-outline"></ion-icon>
+<span>Dark Mode</span>
+    </div>
+    <div class="swich">
+        <div class="base">
+            <div class="circulo">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- informacion  al final de la barra lateral -->
+<div class="usuario">
+    <img src="./imagen/cerrajero.png" alt="">
+    <div class="info-usuario">
+        <div class="nombre-email">
+            <span class="nombre">Nombre Usuario</span>
+            <span class="email">E-mail</span>
+        </div>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+    </div>
+</div>
+</div>
+</div>
+<!-- publicidad debajo de la barra lateral con evento click a la nube -->
+<div class="publicidad">
+</div>
+      <div class="encabezado">
+  <h1 class="titulo-principal">Servicios Web</h1>
+</div>
+<!-- contenedor del buscador -->
+    <div class="contenido">
+     <div class="buscador">
+     <input type="text" id="campoBusqueda" placeholder="Buscar...">
+     <button onclick="confirmarBusqueda()">Buscar</button>
+     
+</div>
+<!-- listas de servicios donde buscar la funcion -->
+      <div class="lista-servicios">
+        <!-- primer fila -->
+<div class="listaResultados">
+  <ul>
+    <li>Albañilería general</li>
+    <li>Armado de muebles</li>
+    <li>Calefacción e instalación de estufas</li>
+    <li>Carpintería a medida</li>
+    <li>Cerrajero</li>
+    <li>Colocación de cerámicos y porcelanatos</li>
+    <li>Colocación de durlock</li>
+    <li>Colocación de pisos flotantes</li>
+    <li>Decoración de interiores</li>
+    <li>Desinfección y control de plagas</li>
+    <li>Electricista domiciliario</li>
+    <li>Fumigación domiciliaria</li>
+    <li>Gasista matriculado</li>
+  </ul>
+</div>
+<!-- segunda fila -->
+<div class="listaResultados">
+  <ul>
+    <li>Herrero para rejas y portones</li>
+    <li>Instalación de aires acondicionados</li>
+    <li>Instalación de cámaras de seguridad</li>
+    <li>Instalación de porteros eléctricos</li>
+    <li>Jardinero y mantenimiento de parques</li>
+    <li>Limpieza de tanques de agua</li>
+    <li>Limpieza post obra</li>
+    <li>Mantenimiento de piletas</li>
+    <li>Montaje de muebles de cocina</li>
+    <li>Pintura de interiores y exteriores</li>
+    <li>Plomería urgente y reparaciones</li>
+  </ul>
+</div>
+<!-- tercera fila -->
+<div class="listaResultados">
+  <ul>
+    <li>Pulido de autos</li>
+    <li>Reparación de calefones y termotanques</li>
+    <li>Reparación de electrodomésticos</li>
+    <li>Reparación de persianas</li>
+    <li>Revestimiento en piedra o madera</li>
+    <li>Refrigeracion y aires acondicionados</li>
+    <li>Servicio técnico para computadoras</li>
+    <li>Soldadura y estructuras metálicas</li>
+    <li>Tapicería de sillas y sillones</li>
+    <li>Techista y reparación de goteras</li>
+    <li>Trabajos de altura con andamios</li>
+    <li>Vidriería y colocación de cristales</li>
+    <li>Yesería y revestimientos</li>
+    <li>Zapatero</li>
+  </ul>
+</div>
+      </div>
+      <!-- contenedor de las tarjetas personales -->
+        <div class="servicios">
+         
+          <h2>Contactar aqui tu servicio</h2>
+            <!-- contenedor tarjeta personal primer fila -->
+      <div class="contenedorTarjetas">
+  <!-- tarjeta personal cerrajero-->
+   <div class="tarjeta-personal">
+     <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/cerrajero.png" alt="">
+   </div>
+   <span>Cerrajeros</span>
+ <p>🔐 Cerrajeros rápidos y seguros. ¡Aperturas e instalaciones sin complicaciones!</p>
+   </div>
+     <!-- tarjeta personal mecanico-->
+   <div class="tarjeta-personal">
+     <div class="circulo-tarjeta">
+<img class="service" src="./imagen/mecanico.png" alt="">
+   </div>
+   <span>Mecanico</span>
+ <p>🔧 Mecánicos expertos y confiables. ¡Tu vehículo en marcha con total seguridad!</p>
+   </div>
+     <!-- tarjeta personal herreros-->
+   <div class="tarjeta-personal">
+   <div class="circulo-tarjeta">
+    <img class="service" src="./imagen/celda-de-prision.png" alt="">
+    </div>
+   <span>Herreros</span>
+ <p>🛠️ Herreros expertos en fuerza y detalle. ¡Estructuras firmes con estilo artesanal!</p>
+   </div>
+     <!-- tarjeta personal  gasistas-->
+   <div class="tarjeta-personal">
+    <div class="circulo-tarjeta">
+      <img class="service" src="./imagen/tubo.png" alt="">
+   </div>
+   <span>Gasistas</span>
+ <p>🔥 Gasistas profesionales y seguros. ¡Instalaciones y reparaciones sin complicaciones!</p>
+   </div>
+ </div>
+ <!-- contenedor tarjeta personal segunda fila -->
+   <div class="contenedorTarjetas">
+      <!-- tarjeta personal desinfeccion-->
+<div class="tarjeta-personal">
+      <div class="circulo-tarjeta">
+    <img class="service" src="./imagen/desinfectante.png" alt="">
+   </div>
+  <span>Desinfeccion</span>
+ <p>🧴 Desinfección profesional y segura. ¡Ambientes protegidos y libres de riesgos!</p>
+   </div>
+     <!-- tarjeta personal  electricistas-->
+ <div class="tarjeta-personal">
+  <div class="circulo-tarjeta">
+        <img class="service" src="./imagen/electrificacion.png" alt="">
+   </div>
+ <span>Electricistas</span>
+ <p>⚡ Electricistas expertos y seguros. ¡Soluciones confiables para tu hogar o negocio!</p>
+   </div>
+     <!-- tarjeta personal plomero-->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/plomeria.png" alt="">
+   </div>
+ <span>Plomeria</span>
+ <p>🛠️ Plomeros confiables y eficientes. ¡Soluciones rápidas para tus cañerías!</p>
+   </div>
+     <!-- tarjeta personal rep. pc -->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/ordenador-personal.png" alt="">
+   </div>
+ <span>Reparacion de pc</span>
+ <p>🖥️ Reparación de PC rápida y confiable. ¡Tu equipo funcionando como nuevo</p>
+   </div>
+  </div>
+    <!-- contenedor tarjeta personal tercer fila -->
+    <div class="contenedorTarjetas">
+        <!-- tarjeta personal jardineros -->
+<div class="tarjeta-personal">
+      <div class="circulo-tarjeta">
+    <img class="service" src="./imagen/guarnicion.png" alt="">
+   </div>
+  <span>Jardineros</span>
+ <p>🌿 Jardineros que dan vida y color a tu espacio. ¡Naturaleza bien cuidada, todo el año</p>
+   </div>
+     <!-- tarjeta personal pintores-->
+ <div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/pintor.png" alt="">
+   </div>
+ <span>Pintores</span>
+ <p>🎨 Pintores expertos en detalle y color. ¡Transformá tus espacios con estilo!</p>
+   </div>
+     <!-- tarjeta personal cctv -->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/camara-de-cctv.png" alt="">
+   </div>
+ <span>Camaras de seguridad</span>
+ <p>🎥 Cámaras de seguridad con vigilancia precisa y confiable. ¡Protegé lo que más importa!</p>
+   </div>
+     <!-- tarjeta personal zapatero-->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/zapatero.png" alt="">
+   </div>
+ <span>Zapateros</span>
+ <p>👞 Zapateros que cuidan tus pasos. ¡Reparaciones con estilo y precisión!</p>
+   </div>
+  </div>  
+  <!-- contenedor tarjeta personal cuarta fila -->
+    <div class="contenedorTarjetas">
+        <!-- tarjeta personal rep.electros-->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/aparato-electrico.png" alt="">
+   </div>
+ <span>Reparacion de electrodomésticos</span>
+ <p>🔧 Reparación de electrodomésticos rápida y segura. ¡Tu equipo funcionando como nuevo!</p>
+   </div>
+     <!-- tarjeta personal vidrieros-->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/pared-de-vidrio.png" alt="">
+   </div>
+ <span>Vidrieros</span>
+ <p>🪟 Vidrieros expertos en brillo y precisión. ¡Tus cristales, como nuevos!</p>
+   </div>
+     <!-- tarjeta personal limpieza perros-->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/perro.png" alt="">
+   </div>
+ <span>Baños de mascotas</span>
+ <p>🐾 Baños para mascotas con cuidado, higiene y amor. ¡Tu compañero limpio y feliz!</p>
+   </div>
+     <!-- tarjeta personal limpiador -->
+<div class="tarjeta-personal">
+ <div class="circulo-tarjeta">
+   <img class="service" src="./imagen/limpiador.png" alt="">
+   </div>
+ <span>Limpieza de hogar</span>
+ <p>✨ Limpieza impecable, rápida y confiable. ¡Tu espacio como nuevo</p>
+   </div>
+  </div>
+  </div> 
+ </div>
+ 
+</body>
+
+
+

@@ -1,0 +1,620 @@
+/* variables de color */
+:root {
+ --color-barra-lateral: #f5f7fa;               
+ --color-textos: #1e1e2f;                      
+ --color-textos-menu: #5c6bc0;     
+ --color-textos-li: #663399;          
+ --color-boton: #4dd0e1;                      
+ --color-texto-boton: #ffffff;               
+ --color-menu-hover: #e0f7fa;                  
+ --color-menu-hover-textos: #00796b;          
+ --color-body: rgb(255,255,255);     
+ --color-linea: rgb(205, 236, 214);                  
+ --color-swich-base: rgb(201,202,206);
+ --color-swich-circulo: rgb(241,241,241);
+}
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Contrail One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 62.5%;
+} 
+/* letra */
+.delius-regular {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+/* variables de colores dark mode */
+.dark-mode {
+--color-barra-lateral:  rgb(44,45,49);
+--color-textos: rgb(255,255,255);
+--color-textos-menu:  rgb(110,110,117);
+--color-textos-li: rgb(245, 245, 245);
+--color-boton:  #27CD40;
+--color-texto-boton:  rgb(0,0,0);
+--color-menu-hover: rgb(0,0,0);
+--color-menu-hover-textos:  rgb(238,238,238);
+--color-linea: rgb(71,70,78);
+--color-swich-base: rgb(39,205,64);
+--color-swich-circulo: rgb(255,255,255);
+--color-body: rgb(63, 61, 61);
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-color:var(--color-body);
+  transition: width 0.5s ease ,background-color 3s ease ;
+}
+/*barra lateral */
+.barra-lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 100%;
+  padding: 20px 15px;
+  background-color: var(--color-barra-lateral);
+  transition: width 0.5s ease ,background-color 3s ease ;
+  overflow: hidden;
+}
+/*barra lateral navegacion */
+.barra-lateral .navegacion {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/*barra lateral span*/
+.barra-lateral span {
+ font-size: 1.5rem;
+ text-align: left;
+ opacity: 1;
+ width: 100px;
+ white-space: nowrap;
+ transition: opacity 0.5s ease  width 0.5s ease;
+}
+/*barra lateral span oculto*/
+.barra-lateral span.oculto {
+  opacity: 0;
+  width: 0;
+}
+/*barra lateral nombre de la pagina */
+.barra-lateral .nombre-pagina {
+ width: 100%;
+ height: 45px;
+ display: flex;
+ align-items: center;
+ margin-bottom: 40px;
+ color: var(--color-textos);
+}
+/*barra lateral iconos*/
+.barra-lateral .nombre-pagina ion-icon{
+ min-width: 50px;
+ font-size: 4rem;
+ cursor: pointer;
+}
+.barra-lateral .nombre-pagina span{
+ font-size: 2.5rem;
+ margin-left: 5px;
+}
+/* se incorpora al body con el evento cloud */
+.mini-barra-lateral{
+  width: 80px;
+}
+.barra-lateral .nombre-pagina span.oculto {
+  opacity: 0;
+}
+/*barra lateral boton*/
+.barra-lateral .boton {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-boton);
+  color: var(--color-texto-boton);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease
+}
+/*barra lateral icono del boton */
+.barra-lateral .boton ion-icon {
+ min-width: 50px;
+ font-size: 2.5rem;
+}
+.barra-lateral .boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+  background-color: #38c4d6; 
+}
+/*barra lateral <li> */
+.barra-lateral .navegacion li {
+  list-style: none;
+  display: flex;
+  margin-bottom: 5px;
+}
+.barra-lateral .navegacion a:hover {
+ color: var(--color-menu-hover-textos);
+ background-color: var(--color-menu-hover);
+ border-radius: 10px;
+}
+/*barra lateral <a>*/
+.barra-lateral .navegacion a {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+  color: var(--color-textos-menu);    
+}
+/*barra lateral navegacion iconos */
+.barra-lateral .navegacion ion-icon {
+  min-width: 50px;
+  font-size: 2.5rem;
+}
+/*barra lateral linea divisor*/
+.barra-lateral .linea {
+ width: 100%;
+ height: 1px;
+ background-color:var(--color-linea);
+}
+/*barra lateral dark mode */
+.barra-lateral .modo-oscuro {
+ width: 100%;
+ border-radius: 10px;
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 80px;
+}
+.barra-lateral .modo-oscuro .info {
+  width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  color: var(--color-textos-menu);
+  overflow: hidden;
+}
+.barra-lateral .modo-oscuro ion-icon {
+  width: 50px;
+  font-size: 2.5rem;
+}
+.barra-lateral .modo-oscuro .swich {
+  min-width: 50px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/*barra lateral perilla con evento click dark mode*/
+.barra-lateral .modo-oscuro .base {
+ width: 35px;
+ height: 20px;
+ background-color:var(--color-swich-base);
+ border-radius: 50px;
+ position: relative;
+}
+.barra-lateral .modo-oscuro .circulo {
+  width: 18px;
+  height: 90%;
+  background-color:var(--color-swich-circulo);
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  transition: left 0.5s ease;
+}
+.barra-lateral .modo-oscuro .circulo.prendido {
+  left: 15px;
+}
+.barra-lateral .usuario {
+  width: 100%;
+  display: flex;
+}
+.barra-lateral .usuario img {
+  width: 50px;
+  min-width: 50px;
+}
+.barra-lateral .usuario .info-usuario {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-textos);
+  overflow: hidden;
+}
+.barra-lateral .usuario .nombre-email {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.barra-lateral .usuario .nombre {
+  font-size: 2rem;
+  font-weight: 600px;
+}
+.barra-lateral .usuario .email {
+  font-size: 1.5rem;
+}
+.barra-lateral .usuario ion-icon {
+  font-size: 1.5rem;
+}
+.lista-servicios {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.contenedorTarjetas {
+ display: flex;  
+ flex-grow: 1;
+}
+ /* contenedor de toda la pagina */
+.contenedor-principal {
+  display: flex;
+  width: 100%;
+  align-content: start;
+}
+.contenido {
+  flex-grow: 3;
+  width: 100%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+/*buscardor imput */
+.contenido .buscador input {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  min-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 2rem;
+  outline: none;
+  margin-bottom: 20px;
+}
+.contenido .buscador input:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.buscador {
+  display: flex;
+  gap: 10%;
+  max-width: 300px;
+}
+/*boton buscar */
+.buscador button {
+  width: 100%;
+  min-width: 200px;
+  height: 45px;
+  background-color: var(--color-boton);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-texto-boton);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease,box-shadow 0.3s ease,background-color 0.3s ease;
+}
+.buscador button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+  background-color: #38c4d6; 
+}
+.buscador button:active {
+  transform: translat
+}
+.encabezado {
+  display: flex;
+  padding: 20px;
+  text-align: center; 
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+li {
+  color: var(--color-textos-li);
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+li:hover {
+  transform: translateX(6px);
+  color:var(--color-boton);
+}
+/*pagina de inicio grid*/
+.contenedor-principal {
+  display: grid;
+  grid-template-areas:
+  
+  "bar var titulos1 titulos1"
+  "bar var buscador buscador" 
+  "bar var buscador buscador";
+
+  grid-template-columns:  20% 0% 80% 0%;
+  grid-template-rows: 100px 100px 2000px;
+  justify-content: center;
+}
+/*titulo <h1> */
+.titulo-principal {
+ font-family: 'Rajdhani', sans-serif; 
+ font-size: 7rem;
+ text-transform: uppercase;
+ color: #00acc1; 
+ text-shadow:
+  1px 1px 0 #ffffff,      
+  2px 2px 0 #607d8b,      
+  4px 4px 0 #00bcd4,     
+  6px 6px 6px #263238; 
+ letter-spacing: 3px;
+ font-weight: 800;
+}
+.encabezado {
+ grid-area: titulos1;
+}
+.barra-lateral {
+ grid-area: bar;
+ text-align: center;
+}
+.contenido {
+ grid-area: buscador;
+}
+.publicidad {
+ grid-area: var;
+}
+/* parrafos en las tarjetas personales */
+p{
+  font-size: 1.5rem;
+}
+h2{
+  text-align: center;
+  padding: 3%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 4rem;
+  color: #455a64;
+  text-shadow:0.5px 0.5px 0 #eceff1,1px 1px 2px rgba(0, 172, 193, 0.3);
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+ .tarjeta-personal {
+  width: 650px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 4rem;
+  color: white;
+  padding: 3% 3% 4% 1%;
+  gap: 5%;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #4dd0e1,#344054);
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-personal:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+.circulo-tarjeta {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f1c40f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 1%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.circulo-tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+.contenedorTarjetas {
+  display: flex;
+  gap: 1%;
+  width: 100%;
+  color: var(--color-textos);
+}
+ .tarjeta-personal-inactiva {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 4rem;
+  color: white;
+  padding: 3% 3% 4% 1%;
+  gap: 5%;
+  border-radius: 25px;
+  background: linear-gradient(135deg, white,#344054);
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.servicios {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% + 13.5%);
+  margin-left: -7.3%;
+  gap: 3%;
+}
+/* }dibujo dentro de las tarjetas */
+.service {
+  width: 80%;
+  height: 80%;
+}
+#campoBusqueda:focus {
+  border: 2px solid #3498db;
+  outline: none;
+  font-weight: bold;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* publicidad oculta debajo de la barra lateral con evento en click al icono nube*/
+.publicidad{
+  transform: translateX(0);
+  opacity: 0;
+}
+/* publicidad debajo de la barra lateral con evento en click al icono nube*/
+.div-oculto {
+  display: block; 
+  grid-area: var;
+  width: 250px;
+  transform: translateX(-240px);
+  opacity: 1;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  background-image: url(./imagen/autog.png);
+}
+
+/*pagina servicios grid*/
+.contenedor-servicios {
+  display: grid;
+  grid-template-areas:
+  
+  "bar var tar tar"
+  "bar var tar tar" 
+  "bar var tar tar";
+
+  grid-template-columns:  20% 0% 80% 0%;
+  grid-template-rows: 100px 100px 2000px;
+  justify-content: center;
+}
+.contenedorTarjetasActivas {
+ grid-area: tar;
+}
+.contenedorTarjetasActivas {
+ display: flex; 
+ margin-top: 10%;
+width: 900px;
+height: 100%;
+gap: 3%;
+ flex-grow: 1;
+}
+/*media queries*/
+@media(max-width :480px){
+.contenedor-principal {
+ grid-template-rows: 50px 5000px 560px;
+ grid-template-columns: 20% 0% 80% 0%;
+}
+.div-oculto {
+  display: none;
+}
+.lista-servicios {
+  display: flex;
+  flex-direction: column;
+}
+.buscador {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+}
+.titulo-principal{
+  margin-top: 20%;
+}
+.contenido .buscador input {
+ min-width: 100px; 
+}
+.contenido{
+  font-size: 1.5rem;
+  width: 450px;
+}
+.contenido .contenedorTarjetas {
+  flex-direction: column;
+  width: auto;
+  height:auto;
+}
+.circulo-tarjeta {
+  width: 100px;
+  height: 200px;
+}
+.tarjeta-personal {
+  width: 400px;
+  height: 200px;
+}
+.servicios {
+  padding:0px;
+  width: 100%;
+  margin-top: 500px;
+  margin-left: -50px;
+
+}
+.publicidad {
+  transform: translateX(35%);
+  opacity: 0;
+}
+.div-oculto {
+  opacity: 1;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+.encabezado {
+ width: 500px;
+}
+h2 {
+  display: none;
+}
+.barra-lateral .nombre-pagina span{
+  opacity: 0;
+}
+.barra-lateral {
+  width: 100px;
+}
+.mini-barra-lateral {
+  width: 600px;
+  position: relative;
+  height: 550px;
+}
+.barra-lateral span.oculto {
+  opacity: 1;
+  width: 1;
+}
+.barra-lateral .nombre-pagina span.oculto {
+    opacity: 1;
+}
+.barra-lateral span {
+  opacity: 0;
+}
+.barra-lateral .boton {
+  display: none;
+}
+.contenedorTarjetas {
+  gap: 3%;
+}
+}
+
