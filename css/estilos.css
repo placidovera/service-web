@@ -4,14 +4,17 @@
  --color-textos: #1e1e2f;                      
  --color-textos-menu: #5c6bc0;     
  --color-textos-li: #663399;          
- --color-boton: #4dd0e1;                      
+ --color-boton: #00BFFF;                      
  --color-texto-boton: #ffffff;               
  --color-menu-hover: #e0f7fa;                  
- --color-menu-hover-textos: #00796b;          
+ --color-menu-hover-textos: #00796b;   
+ --color-menu-tarjetas: #4D4D4D;       
  --color-body: rgb(255,255,255);     
  --color-linea: rgb(205, 236, 214);                  
  --color-swich-base: rgb(201,202,206);
  --color-swich-circulo: rgb(241,241,241);
+ --color-titulosh2:  #00bcd4;
+
 }
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
 *{
@@ -35,14 +38,16 @@
 --color-textos: rgb(255,255,255);
 --color-textos-menu:  rgb(110,110,117);
 --color-textos-li: rgb(245, 245, 245);
---color-boton:  #27CD40;
+--color-boton:  #B0C4DE;
+--color-menu-tarjetas:  rgb(238,238,238); 
 --color-texto-boton:  rgb(0,0,0);
 --color-menu-hover: rgb(0,0,0);
 --color-menu-hover-textos:  rgb(238,238,238);
 --color-linea: rgb(71,70,78);
 --color-swich-base: rgb(39,205,64);
 --color-swich-circulo: rgb(255,255,255);
---color-body: rgb(63, 61, 61);
+--color-body: #1A2B4C;
+--color-titulosh2: #E8eef0;
 }
 body{
   width: 100%;
@@ -61,6 +66,7 @@ body{
   background-color: var(--color-barra-lateral);
   transition: width 0.5s ease ,background-color 3s ease ;
   overflow: hidden;
+  z-index: 2;
 }
 /*barra lateral navegacion */
 .barra-lateral .navegacion {
@@ -124,7 +130,7 @@ body{
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease
+  transition: transform 0.2s ease;
 }
 /*barra lateral icono del boton */
 .barra-lateral .boton ion-icon {
@@ -394,7 +400,7 @@ h2{
   padding: 3%;
   font-family: 'Rajdhani', sans-serif;
   font-size: 4rem;
-  color: #455a64;
+  color:var(--color-titulosh2);
   text-shadow:0.5px 0.5px 0 #eceff1,1px 1px 2px rgba(0, 172, 193, 0.3);
   letter-spacing: 1px;
   font-weight: 600;
@@ -441,7 +447,6 @@ h2{
   display: flex;
   gap: 1%;
   width: 100%;
-  color: var(--color-textos);
 }
  .tarjeta-personal-inactiva {
   width: 100%;
@@ -499,7 +504,7 @@ ul {
   transform: translateX(-240px);
   opacity: 1;
   transition: transform 1s ease-out, opacity 1s ease-out;
-  background-image: url(./imagen/autog.png);
+  background-image: url(../imagen/autog.png);
 }
 
 /*pagina servicios grid*/
@@ -517,20 +522,89 @@ ul {
 }
 .contenedorTarjetasActivas {
  grid-area: tar;
-}
-.contenedorTarjetasActivas {
  display: flex; 
  margin-top: 10%;
-width: 900px;
-height: 100%;
-gap: 3%;
+ width: 900px;
+ height: 100%;
+ gap: 3%;
  flex-grow: 1;
+}
+.contenedor-activas{
+left: 30px;
+margin-top: 100px;
+}
+.tarjeta-persona {
+  width: 650px;
+  height: 400px;
+  background: linear-gradient(135deg, #0d6fb8, #1da3df);
+  border-radius: 25px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.foto-container {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  border: 3px solid white;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+}
+
+.foto-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-servicio {
+  margin-top: 120px;
+  line-height: 1.6;
+}
+
+.numeros {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.tarjeta-persona .numeros span {
+  display: block;      
+  margin: 5px 0;         
+  font-size: 2.5rem;      
+  color: #333;          
+}
+.tarjeta-persona .info-servicio span {
+  display: block;        
+  margin: 5px 0;         
+  font-size: 2.5rem;      
+  color:#333;           
+}
+/* <body class="cloudy">en paginaservicioActivo0.html */
+.cloudy {
+ background-image: url(../imagen/v915-wit-011.jpg);
+ background-size: cover; 
+ background-repeat: no-repeat;
 }
 /*media queries*/
 @media(max-width :480px){
 .contenedor-principal {
  grid-template-rows: 50px 5000px 560px;
- grid-template-columns: 20% 0% 80% 0%;
+ grid-template-columns: 5% 0% 95% 0%;
 }
 .div-oculto {
   display: none;
@@ -546,14 +620,17 @@ gap: 3%;
   max-width: 900px;
 }
 .titulo-principal{
-  margin-top: 20%;
+  margin: 20%;
+  font-size: 6rem;
+  margin-left: 40%;
 }
 .contenido .buscador input {
  min-width: 100px; 
 }
 .contenido{
   font-size: 1.5rem;
-  width: 450px;
+  width: 550px;
+  margin-left: 5%;
 }
 .contenido .contenedorTarjetas {
   flex-direction: column;
@@ -572,8 +649,6 @@ gap: 3%;
   padding:0px;
   width: 100%;
   margin-top: 500px;
-  margin-left: -50px;
-
 }
 .publicidad {
   transform: translateX(35%);
@@ -586,14 +661,12 @@ gap: 3%;
 .encabezado {
  width: 500px;
 }
-h2 {
-  display: none;
-}
+
 .barra-lateral .nombre-pagina span{
   opacity: 0;
 }
 .barra-lateral {
-  width: 100px;
+  width: 70px;
 }
 .mini-barra-lateral {
   width: 600px;
@@ -605,7 +678,7 @@ h2 {
   width: 1;
 }
 .barra-lateral .nombre-pagina span.oculto {
-    opacity: 1;
+  opacity: 1;
 }
 .barra-lateral span {
   opacity: 0;
@@ -616,5 +689,26 @@ h2 {
 .contenedorTarjetas {
   gap: 3%;
 }
+.tarjeta-persona {
+ width: 300px;
+ height: 450px;
 }
-
+.foto-container {
+ top: 90px;
+ right: 90px;
+}
+.info-servicio {
+  margin-top: 130px;
+  padding-right: 160px; 
+  line-height: normal;
+}
+.tarjeta-persona .numeros span {
+  font-size: 2rem;
+}
+.numeros {
+  flex-direction: column;
+}
+.titulo {
+ font-size: 2rem; 
+}
+}

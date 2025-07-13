@@ -10,7 +10,8 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <!-- contendedor de la pagina -->
-<body>
+<body class="cloudy">
+    <main>
  <div class="contenedor-servicios">
   <!-- barra lateral -->
     <div class="barra-lateral">
@@ -92,46 +93,52 @@
 </div>
 </div>
 </div>
-<div class="contenedorTarjetasActivas">
-<div class="tarjeta-personal">
-   <div class="circulo-tarjeta">
-    <img class="service" src="../imagen/zapatero.png" alt="">
-    </div>
-   <div id="infoServicio">
-</div>
-</div>
-<div class="tarjeta-personal">
-   <div class="circulo-tarjeta">
-    <img class="service" src="../imagen/zapatero.png" alt="">
-    </div>
-   <div id="infoServicio">
-</div>
-</div>
-<div class="tarjeta-personal">
-   <div class="circulo-tarjeta">
-    <img class="service" src="../imagen/zapatero.png" alt="">
-    </div>
-   <div id="infoServicio">
-</div>
+<!-- final barra lateral -->
+<div class="contenedor-activas">
+    <!-- contenedor tarjetas activas -->
+<div class="tarjeta-persona">
+  <h2 id="tituloServicio" class="titulo">Título</h2>
+  
+  <div class="foto-container">
+    <img id="fotoServicio" src="foto.jpg" alt="Foto perfil">
+  </div>
+
+  <div class="info-servicio">
+    <span><strong>Teléfono:</strong> <span id="telefonoServicio">---</span></span>
+  </div>
+
+  <div class="numeros">
+    <span><strong>Dirección:</strong> <span id="ubicacionServicio">---</span></span>
+    <span><strong>Horarios:</strong> <span id="horariosServicio">---</span></span>
+  </div>
 </div>
 </div>
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const servicio = JSON.parse(localStorage.getItem("servicioSeleccionado"));
-    const contenedor = document.getElementById("infoServicio");
 
     if (servicio) {
-      contenedor.innerHTML = `
-        <h2>${servicio.nombre}</h2>
-        <p>Teléfono: ${servicio.telefono || "No disponible"}</p>
-        <p>Ubicación: ${servicio.ubicacion || "No disponible"}</p>
-        <p>Horarios: ${servicio.horarios || "No disponible"}</p>
-        <p>Estado: ${servicio.activo ? "Activo" : "Inactivo"}</p>
-      `;
-    } else {
-      contenedor.innerHTML = "<p>No se encontró ningún servicio.</p>";
+      // Reemplaza el título
+      document.getElementById("tituloServicio").textContent = servicio.nombre;
+
+      // Reemplaza la imagen si tenés una propiedad "foto" en el objeto
+     const imagen = document.getElementById("fotoServicio");
+
+if (imagen) {
+  imagen.src = servicio.foto?.trim() || "../imagen/image (1).png";
+}
+
+      // Reemplaza los datos individuales
+     document.getElementById("tituloServicio").textContent = servicio.activo ? servicio.nombre : "Aún no hay un servicio disponible";
+     document.getElementById("telefonoServicio").textContent = servicio.telefono || "";
+     document.getElementById("ubicacionServicio").textContent = servicio.ubicacion || "";
+     document.getElementById("horariosServicio").textContent = servicio.horarios || "";
+     document.getElementById("estadoServicio").textContent = `Estado: ${servicio.activo ? "Activo" : "Inactivo"}`;
+
     }
   });
 </script>
 
+ </main>
+</body>
