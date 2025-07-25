@@ -8,6 +8,7 @@
 <script src="../js/script.js" defer></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <!-- contendedor de la pagina -->
 <body class="cloudy">
@@ -115,7 +116,7 @@
 </div>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+
     const servicio = JSON.parse(localStorage.getItem("servicioSeleccionado"));
 
     if (servicio) {
@@ -136,8 +137,7 @@ if (imagen) {
      document.getElementById("horariosServicio").textContent = servicio.horarios || "";
      document.getElementById("estadoServicio").textContent = `Estado: ${servicio.activo ? "Activo" : "Inactivo"}`;
 
-    }
-  });
+    };
 </script>
 
  </main>

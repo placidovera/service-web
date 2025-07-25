@@ -711,4 +711,7 @@ margin-top: 100px;
 .titulo {
  font-size: 2rem; 
 }
+}.swal-tamaño-grande {
+  font-size: 2rem;
+  width: 600px;
 }

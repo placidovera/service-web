@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios</title>
+<title>ServiciosParana</title>
 <link rel="stylesheet" href="./css/estilos.css">
+<link rel="icon" href="./imagen/plomeria.png" type="image/x-icon">
 <script src="./js/script.js" defer></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 <!-- contendedor de la pagina -->
 <body>
@@ -104,7 +108,7 @@
      <div class="buscador">
      <input type="text" id="campoBusqueda" placeholder="Buscar...">
      <button onclick="confirmarBusqueda()">Buscar</button>
-     
+     <button class="boton" id="miBoton">Limpiar texto</button>
 </div>
 <!-- listas de servicios donde buscar la funcion -->
       <div class="lista-servicios">
