@@ -1,0 +1,78 @@
+body {
+  background: linear-gradient(135deg, #002b45 0%, #004e66 100%);
+  font-family: 'Rajdhani', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Glassmorphism */
+.glass-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Título con sombra */
+.titulo-principal {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  color: #00c6ff;
+  text-shadow:
+    1px 1px 0 #ffffff,
+    2px 2px 0 #607d8b,
+    4px 4px 0 #00bcd4,
+    6px 6px 6px #263238;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Formulario */
+.form-label {
+  font-weight: 600;
+  color: #ffffffcc;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  border: none;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ccc;
+}
+
+/* Botón */
+button[type="submit"] {
+  background-color: #00bcd4;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0097a7;
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .glass-form {
+    padding: 2rem 1rem;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+    text-shadow: 1px 1px #000;
+  }
+}
+
+@media(max-width :250px){
+.titulo-principal{
+  font-size: 2rem;
+
+}
+}

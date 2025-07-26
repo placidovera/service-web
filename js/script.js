@@ -100,7 +100,7 @@ function limpiarCampos() {
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Sí, limpiar",
-        cancelButtonText: "No, quedarme",
+        cancelButtonText: "No, borrar",
           reverseButtons: true,
   customClass: {
     popup: 'swal-tamaño-grande'
@@ -109,7 +109,7 @@ function limpiarCampos() {
        if (result.isConfirmed) {
          limpiarCampos();
 } else if (result.dismiss === Swal.DismissReason.cancel) {
-          Swal.fire("Cancelado", "Seguís en la página actual", "info");
+          Swal.fire("Cancelado", "No limpiar texto", "info");
         }
       });
     });

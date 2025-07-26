@@ -391,21 +391,8 @@ li:hover {
 .publicidad {
  grid-area: var;
 }
-/* parrafos en las tarjetas personales */
-p{
-  font-size: 1.5rem;
-}
-h2{
-  text-align: center;
-  padding: 3%;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 4rem;
-  color:var(--color-titulosh2);
-  text-shadow:0.5px 0.5px 0 #eceff1,1px 1px 2px rgba(0, 172, 193, 0.3);
-  letter-spacing: 1px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
+
+/*  tarjetas personales */
  .tarjeta-personal {
   width: 650px;
   height: 220px;
@@ -426,6 +413,20 @@ h2{
 .tarjeta-personal:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}/* parrafos en las tarjetas personales */
+p{
+  font-size: 1.5rem;
+}
+h2{
+  text-align: center;
+  padding: 3%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 4rem;
+  color:var(--color-titulosh2);
+  text-shadow:0.5px 0.5px 0 #eceff1,1px 1px 2px rgba(0, 172, 193, 0.3);
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .circulo-tarjeta {
   width: 60px;
@@ -715,3 +716,4 @@ margin-top: 100px;
   font-size: 2rem;
   width: 600px;
 }
+
