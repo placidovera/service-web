@@ -18,6 +18,8 @@ const upload = multer({ storage });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
+app.use('/page', express.static(path.join(__dirname, 'page')));
+
 
 if (!fs.existsSync('uploads')) {
   fs.mkdirSync('uploads');
@@ -27,41 +29,19 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Entregamos servicio-pendiente.html estático
 app.get('/servicio-pendiente.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'servicio-pendiente.html'));
+  res.sendFile(path.join(__dirname, 'page', 'servicio-pendiente.html'));
 });
 
-app.post('/enviar', upload.single('archivo'), (req, res) => {
-  const { nombre, servicio, direccion, comentario } = req.body;
-  const archivo = req.file ? `/uploads/${req.file.filename}` : null;
+app.post('/enviar', (req, res) => {
+  upload.single('archivo')(req, res, function(err) {
+    if (err) {
+      console.error('❌ Error en multer:', err);
+      return res.status(500).send('Error al subir archivo');
+    }
 
-  // Creamos el objeto con los datos que querés mostrar
-  const datosServicio = {
-    nombre: servicio || nombre || "Sin nombre",
-    telefono: "123-456-7890", // ejemplo fijo, cambialo según tus datos
-    ubicacion: direccion || "Sin dirección",
-    horarios: "Lun a Vie 9:00 a 18:00", // ejemplo fijo
-    activo: true,
-    foto: archivo || "../imagen/image (1).png"
-  };
-
-  // En vez de guardar en un archivo JSON, le mandamos al navegador
-  // una página que guardará estos datos en localStorage y redirigirá a servicio-pendiente.html
-
-  res.send(`
-    <html>
-      <head><title>Redirigiendo...</title></head>
-      <body>
-        <script>
-          localStorage.setItem('servicioSeleccionado', JSON.stringify(${JSON.stringify(datosServicio)}));
-          window.location.href = '/servicio-pendiente.html';
-        </script>
-      </body>
-    </html>
-  `);
+    console.log('📁 req.file:', req.file);
+    console.log('📝 req.body:', req.body);
+    res.send('✔️ Archivo procesado');
+  });
 });
-
-app.listen(port, () => {
-console.log(`Servidor corriendo en http://localhost:${port}`);})
-
