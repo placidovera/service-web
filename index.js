@@ -4,7 +4,8 @@ const multer = require('multer');
 const fs = require('fs');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -44,4 +45,7 @@ app.post('/enviar', (req, res) => {
     console.log('📝 req.body:', req.body);
     res.send('✔️ Archivo procesado');
   });
+});
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
