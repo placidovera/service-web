@@ -81,3 +81,14 @@ app.post('/enviar', (req, res) => {
     });
   });
 });
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection:', reason);
+});
