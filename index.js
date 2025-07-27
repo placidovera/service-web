@@ -40,6 +40,7 @@ app.post('/enviar', (req, res) => {
       console.error('❌ Error en multer:', err);
       return res.status(500).send('Error al subir archivo');
     }
+console.log("Usuario:", process.env.CORREO_USUARIO);
 
     const transporter = nodemailer.createTransport({
       host: "smtp.office365.com",
