@@ -79,7 +79,6 @@ const transporter = nodemailer.createTransport({
       }
     });
   });
-});
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
