@@ -43,6 +43,7 @@ app.post('/enviar', (req, res) => {
 
     console.log("Usuario:", process.env.CORREO_USUARIO);
 
+    // 🔧 Esta parte debe ir adentro del callback (ACÁ estaba el error)
     const transporter = nodemailer.createTransport({
       host: 'smtp.ethereal.email',
       port: 587,
@@ -79,9 +80,4 @@ app.post('/enviar', (req, res) => {
       }
     });
   });
-});
-
-// ✅ Esto es esencial
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
