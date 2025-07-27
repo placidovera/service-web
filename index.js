@@ -3,7 +3,7 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
-require('dotenv').config(); // ← carga las variables del archivo .env
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -79,4 +79,9 @@ app.post('/enviar', (req, res) => {
       }
     });
   });
+});
+
+// ✅ Esto es esencial
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });
