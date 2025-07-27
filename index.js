@@ -41,15 +41,16 @@ app.post('/enviar', (req, res) => {
       return res.status(500).send('Error al subir archivo');
     }
 console.log("Usuario:", process.env.CORREO_USUARIO);
+const transporter = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
+  secure: false, // usa TLS, pero no SSL
+  auth: {
+    user: process.env.CORREO_USUARIO, // tu usuario ethereal, por ej: 'zena68@ethereal.email'
+    pass: process.env.CORREO_CLAVE    // tu contraseña ethereal
+  }
+});
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.office365.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.CORREO_USUARIO,
-        pass: process.env.CORREO_CLAVE
-      },
       tls: {
         rejectUnauthorized: false
       }
