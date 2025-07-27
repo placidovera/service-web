@@ -44,7 +44,7 @@ app.post('/enviar', (req, res) => {
     console.log("Usuario:", process.env.CORREO_USUARIO);
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
+     host: 'smtp.office365.com',
       port: 587,
       secure: false,
       auth: {
@@ -92,3 +92,4 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection:', reason);
 });
+console.log("Usuario desde env:", process.env.CORREO_USUARIO);
